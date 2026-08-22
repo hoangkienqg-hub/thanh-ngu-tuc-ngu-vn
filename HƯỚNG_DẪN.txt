@@ -1,0 +1,72 @@
+================================================================================
+🎮 HƯỚNG DẪN CHƠI GAME - THÀNH NGỮ & TỤC NGỮ DÂN GIAN
+================================================================================
+
+📍 VỊ TRÍ FILE: D:\WEB-TROCHOI\thanh-ngu-tuc-ngu\
+
+--------------------------------------------------------------------------------
+CÁCH 1: CHƠI TRÊN MÁY TÍNH (NHANH NHẤT)
+--------------------------------------------------------------------------------
+1. Double-click vào file: "Chơi Ngay.bat"
+   HOẶC
+2. Mở thư mục D:\WEB-TROCHOI\thanh-ngu-tuc-ngu\
+3. Double-click vào file: "game_standalone.html"
+4. Trình duyệt sẽ tự động mở → Bắt đầu chơi!
+
+--------------------------------------------------------------------------------
+CÁCH 2: CHIA SẺ CHO HỌC SINH (CẦN INTERNET)
+--------------------------------------------------------------------------------
+⚠️ KHÔNG gửi link zaloapp.com - đó là link SAI!
+
+✅正确的做法: Dùng Netlify Drop (MIỄN PHÍ, 2 phút):
+   
+   Bước 1: Truy cập https://app.netlify.com/drop
+   
+   Bước 2: Kéo thả THƯ MỤC "thanh-ngu-tuc-ngu" vào trang Netlify
+   
+   Bước 3: Chờ vài giây → Netlify tạo link mới dạng:
+           https://random-name-123456.netlify.app
+           
+   Bước 4: Copy link đó và gửi cho học sinh!
+
+--------------------------------------------------------------------------------
+CÁCH 3: CHẠY QUA LOCALHOST (CHO GIÁO VIÊN)
+--------------------------------------------------------------------------------
+Mở Command Prompt hoặc PowerShell, chạy:
+
+  cd D:\WEB-TROCHOI\thanh-ngu-tuc-ngu
+  python -m http.server 8080
+
+Sau đó mở trình duyệt truy cập:
+  http://localhost:8080/games/29_th_thanh_ngu_tuc_ngu/game_standalone.html
+
+--------------------------------------------------------------------------------
+KIỂM TRA HỆ THỐNG
+--------------------------------------------------------------------------------
+✓ File game đã sẵn sàng tại: games/29_th_thanh_ngu_tuc_ngu/game_standalone.html
+✓ Kích thước: 37 KB (nhỏ gọn, tải nhanh)
+✓ Hoạt động offline 100%
+✓ Có đầy đủ 5 câu hỏi thành ngữ, tục ngữ
+
+--------------------------------------------------------------------------------
+LỖI THƯỜNG GẶP
+--------------------------------------------------------------------------------
+❌ "Website can't be reached"
+   → Bạn đang mở link sai! Dùng file .bat hoặc .html trực tiếp.
+
+❌ "Không hiển thị âm thanh"
+   → Nhấn F12 → Console để kiểm tra lỗi
+   → Click 1 lần vào trang để kích hoạt audio
+
+❌ "Lưu điểm không được"
+   → Đang mở bằng file:// protocol
+   → Chuyển sang localhost hoặc upload lên Netlify
+
+--------------------------------------------------------------------------------
+LIÊN HỆ HỖ TRỢ
+--------------------------------------------------------------------------------
+Nếu còn gặp khó khăn, hãy chụp màn hình lỗi và gửi phản hồi.
+
+================================================================================
+© 2026 - Nền Tảng Giáo Dục Việt Nam 🇻🇳
+================================================================================

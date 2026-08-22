@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Hướng Dẫn Deploy Game</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .step {
+            background: #f8fafc;
+            border-left: 4px solid #667eea;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        code {
+            background: #1e293b;
+            color: #7dd3fc;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        .warning {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .success {
+            background: #d1fae5;
+            border-left: 4px solid #10b981;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn-green { background: #10b981; }
+        .btn-blue { background: #3b82f6; }
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        pre code {
+            background: transparent;
+            color: inherit;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        th, td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background: #f8fafc;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Hướng Dẫn Deploy Game Để Học Sinh Chơi</h1>
+
+        <div class="card">
+            <h2>❓ Vấn Đề Bạn Đang Gặp</h2>
+            <div class="warning">
+                <strong>Lỗi:</strong> "jp.zaloapp.com/invalidurl" hoặc "Website can't be reached"<br>
+                <strong>Nguyên nhân:</strong> Bạn đang thử mở file từ máy tính (file://) hoặc link không hợp lệ
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>✅ Cách 1: Dùng Netlify Drop (NHANH NHẤT - 2 PHÚT)</h2>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                Truy cập: <a href="https://app.netlify.com/drop" target="_blank" class="btn btn-green">Mở Netlify Drop</a>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">2</span>
+                Kéo thả thư mục <code>thanh-ngu-tuc-ngu</code> vào khung hiển thị
+            </div>
+            
+            <div class="step">
+                <span class="step-number">3</span>
+                Chờ vài giây → Netlify tự động tạo link
+            </div>
+            
+            <div class="success">
+                <strong>✅ Hoàn thành!</strong> Link sẽ có dạng:<br>
+                <code>https://random-name-123456.netlify.app</code>
+            </div>
+            
+            <p style="margin-top: 1rem;">
+                <strong>Hướng dẫn cho học sinh:</strong><br>
+                Gửi link này qua Zalo → Học sinh bấm vào → Chơi được ngay!
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>✅ Cách 2: Dùng GitHub Pages (MIỄN PHÍ VĨNH VIỄN)</h2>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                Tạo tài khoản GitHub: <a href="https://github.com" target="_blank" class="btn btn-blue">GitHub.com</a>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">2</span>
+                Tạo repository mới (tên gì cũng được, ví dụ: <code>thanh-ngu-game</code>)
+            </div>
+            
+            <div class="step">
+                <span class="step-number">3</span>
+                Upload toàn bộ thư mục <code>thanh-ngu-tuc-ngu</code> lên repository
+            </div>
+            
+            <div class="step">
+                <span class="step-number">4</span>
+                Vào <strong>Settings</strong> → <strong>Pages</strong> → Chọn <code>main</code> branch → <strong>Save</strong>
+            </div>
+            
+            <div class="success">
+                <strong>✅ Hoàn thành!</strong> Link sẽ là:<br>
+                <code>https://tencuaban.github.io/thanh-ngu-game/</code>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>⚠️ KHÔNG Làm Những Việc Sau</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>❌ Hành Động</th>
+                        <th>⚠️ Hậu Quả</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Gửi link <code>file:///D:/...</code></td>
+                        <td>Học sinh không mở được (chỉ chạy trên máy của bạn)</td>
+                    </tr>
+                    <tr>
+                        <td>Upload lên Google Drive rồi chia sẻ link</td>
+                        <td>Google Drive chặn chạy HTML local</td>
+                    </tr>
+                    <tr>
+                        <td>Open bằng trình duyệt từ thanh địa chỉ</td>
+                        <td>Phải duyệt đến đúng file .html</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>📱 Test Trước Khi Gửi Cho Học Sinh</h2>
+            <div class="step">
+                <span class="step-number">1</span>
+                Mở link trên <strong>điện thoại</strong> (không phải máy tính)
+            </div>
+            <div class="step">
+                <span class="step-number">2</span>
+                Kiểm tra:
+                <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>□ Giao diện hiển thị đẹp</li>
+                    <li>□ Nhập tên được</li>
+                    <li>□ Nhấn nút "Bắt Đầu" được</li>
+                    <li>□ Chọn đáp án được</li>
+                    <li>□ Hiển thị điểm số</li>
+                </ul>
+            </div>
+            <div class="step">
+                <span class="step-number">3</span>
+                Nếu mọi thứ OK → Gửi link cho học sinh qua Zalo!
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>💡 Mẹo: Lưu Link Dễ Nhớ</h2>
+            <p>Dùng dịch vụ rút gọn link để học sinh dễ nhớ:</p>
+            <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                <li><a href="https://bitly.com" target="_blank">Bitly.com</a></li>
+                <li><a href="https://tinyurl.com" target="_blank">TinyURL.com</a></li>
+                <li><a href="https://vn.ly" target="_blank">VN.LY</a> (của VNG)</li>
+            </ul>
+            <p style="margin-top: 1rem;">
+                Ví dụ: <code>https://vn.ly/3xYzAbc</code> thay vì <code>https://abc123.netlify.app/games/.../game_standalone.html</code>
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🆘 Vẫn Còn Lỗi?</h2>
+            <div class="warning">
+                <p>Nếu vẫn gặp vấn đề, hãy:</p>
+                <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>Chụp màn hình lỗi</li>
+                    <li>Mở Console (F12) → tab Console</li>
+                    <li>Chụp ảnh các dòng chữ đỏ (lỗi)</li>
+                    <li>Gửi lại cho tôi để hỗ trợ</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

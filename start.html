@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎮 Khởi Động Game</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.card {
+  background: white;
+  border-radius: 24px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  text-align: center;
+}
+h1 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+.subtitle {
+  color: #666;
+  margin-bottom: 2rem;
+}
+.btn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.btn-primary {
+  background: linear-gradient(135deg, #0284C7, #38BDF8);
+  color: white;
+}
+.btn-success {
+  background: linear-gradient(135deg, #10B981, #34D399);
+  color: white;
+}
+.btn-warning {
+  background: linear-gradient(135deg, #F59E0B, #FBBF24);
+  color: white;
+}
+.info {
+  background: #f0f9ff;
+  border-left: 4px solid #0284C7;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  text-align: left;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #333;
+}
+.code {
+  background: #1e293b;
+  color: #7dd3fc;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>🎮 Thành Ngữ & Tục Ngữ</h1>
+  <p class="subtitle">Chọn cách mở game phù hợp:</p>
+  
+  <button class="btn btn-primary" onclick="openGame()">
+    🚀 Mở Game Ngay
+  </button>
+  
+  <button class="btn btn-success" onclick="openStandalone()">
+    📱 Mở Phiên Bản Standalone
+  </button>
+  
+  <button class="btn btn-warning" onclick="showHelp()">
+    ❓ Xem Hướng Dẫn
+  </button>
+  
+  <div class="info" id="helpBox" style="display:none">
+    <strong>⚠️ Lưu ý quan trọng:</strong>
+    <ul style="margin-left: 1.2rem; margin-top: 0.5rem; line-height: 1.8">
+      <li>Nếu thấy lỗi <span class="code">Website can't be reached</span> → Dùng cách 1 (mở file trực tiếp)</li>
+      <li>Để học sinh truy cập được → Upload lên <a href="https://app.netlify.com/drop" target="_blank">Netlify Drop</a></li>
+      <li>Hoặc dùng <a href="https://github.com" target="_blank">GitHub Pages</a> (miễn phí)</li>
+      <li><strong>Không</strong> mở qua Google Drive link</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+function openGame() {
+  const path = getCurrentPath();
+  window.location.href = path + '/games/29_th_thanh_ngu_tuc_ngu/game_01_Bat_dau.html';
+}
+
+function openStandalone() {
+  const path = getCurrentPath();
+  window.location.href = path + '/games/29_th_thanh_ngu_tuc_ngu/game_standalone.html';
+}
+
+function showHelp() {
+  const box = document.getElementById('helpBox');
+  box.style.display = box.style.display === 'none' ? 'block' : 'none';
+}
+
+function getCurrentPath() {
+  let path = window.location.pathname;
+  // Xử lý file:// protocol
+  if (path.startsWith('/')) {
+    path = path.substring(1);
+  }
+  // Lấy thư mục chứa index.html
+  const parts = path.split('/').filter(p => p);
+  parts.pop(); // bỏ file hiện tại
+  return parts.length > 0 ? parts.join('/') : '.';
+}
+
+// Tự động detect và mở game
+window.addEventListener('load', () => {
+  console.log('Current path:', window.location.href);
+  console.log('Protocol:', window.location.protocol);
+});
+</script>
+</body>
+</html>
